@@ -245,3 +245,106 @@ footer { padding: 72px 0 22px; background: #1e1e1c; color: #ddd5cb; }
 /* Marken-Panel mit Loewen-Logo (edel) */
 .brand-panel.has-logo{padding:40px;}
 .brand-panel.has-logo img{width:100%;max-width:330px;height:auto;filter:drop-shadow(0 16px 36px rgba(0,0,0,.55));}
+
+/* =========================================================
+   EDEL-REFRESH v9 (High-End-Look) – gewinnt per Reihenfolge
+   ========================================================= */
+
+/* 1) Marken-Panel beruhigen: kein Hintergrundfoto, ruhiger Navy-Verlauf,
+   feine Gold-Haarlinie, grosszuegiges Padding; Logo als gerahmtes
+   Messing-Schild (ana-security-logo.png, 3D-Loewe auf Wand). */
+.brand-panel.has-logo{
+  position:relative;
+  min-height:460px;
+  display:grid;
+  place-items:center;
+  padding:60px;
+  text-align:center;
+  border:1px solid rgba(154,99,56,.45);
+  border-radius:30px;
+  background:
+    radial-gradient(130% 95% at 50% 10%, rgba(224,196,158,.65), rgba(224,196,158,0) 62%),
+    linear-gradient(158deg, #d9c6a9 0%, #c6ad88 48%, #ab9067 100%);
+  box-shadow:
+    0 34px 80px -34px rgba(58,38,20,.45),
+    inset 0 1px 0 rgba(255,255,255,.35);
+  overflow:hidden;
+}
+/* feine Gold-Haarlinie als innerer Rahmen – ruhig, ohne Foto */
+.brand-panel.has-logo::before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border-radius:20px;
+  border:1px solid rgba(154,99,56,.35);
+  pointer-events:none;
+}
+/* dezenter Lichthauch hinter dem Schild (kein hartes Foto) */
+.brand-panel.has-logo::after{
+  content:"";
+  position:absolute;
+  left:50%;top:46%;
+  width:78%;height:78%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(closest-side, rgba(212,164,111,.14), rgba(212,164,111,0) 72%);
+  pointer-events:none;
+}
+/* Logo-Foto als sauber gerahmtes Schild – gestochen, ruhig, weicher Schatten */
+.brand-panel.has-logo img{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:300px;
+  height:auto;
+  border-radius:16px;
+  border:1px solid rgba(154,99,56,.50);
+  box-shadow:
+    0 18px 40px -16px rgba(48,30,16,.45),
+    inset 0 0 0 1px rgba(255,255,255,.25);
+  filter:none;             /* harten drop-shadow entfernen */
+}
+@media(max-width:900px){
+  .brand-panel.has-logo{min-height:380px;padding:44px;}
+  .brand-panel.has-logo img{max-width:260px;}
+}
+
+/* 2) Typografie-Feinschliff: ruhigere Eyebrows & Headlines */
+.eyebrow{letter-spacing:.24em;font-size:.74rem;gap:14px;}
+.eyebrow::before{width:48px;}
+h1,h2,h3{letter-spacing:-.02em;}
+.section-head h2,.copy h2{line-height:1.06;}
+.home-lead,.hero-copy > p:not(.eyebrow){line-height:1.7;}
+
+/* 3) Ruhigere, gehobene Abstaende zwischen Sektionen */
+.section{padding:120px 0;}
+.section-head{margin-bottom:56px;}
+@media(max-width:620px){.section{padding:84px 0;}}
+
+/* 4) Edle, zurueckhaltende Hover-Effekte */
+.value{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;}
+.value:hover{transform:translateY(-4px);border-color:rgba(212,164,111,.55);box-shadow:0 22px 48px -22px rgba(29,39,46,.28);}
+.button{transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease;}
+.button:hover{box-shadow:0 14px 30px -12px rgba(139,85,46,.55);}
+
+/* 5) Trustbar etwas edler rhythmisieren */
+.trust-item strong{letter-spacing:.01em;}
+.trust-item span{letter-spacing:.02em;}
+
+/* 6) Hero: Lesbarkeit & Tiefe des Overlays verfeinern */
+.home-hero{
+  background:
+    linear-gradient(103deg, rgba(6,11,20,.92) 0%, rgba(10,22,40,.78) 52%, rgba(16,28,40,.58) 100%),
+    url("ana-sign-bg.jpg") center 32%/cover no-repeat;
+}
+.home-hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top, rgba(6,11,20,.55), rgba(6,11,20,0) 38%);
+}
+.home-hero-inner{position:relative;z-index:1;padding:132px 0;}
+@media(max-width:700px){.home-hero-inner{padding:88px 0;}}
+.home-hero h1{letter-spacing:-.025em;line-height:1.08;}
+.home-lead{color:rgba(255,255,255,.9);}
+
+/* 7) CTA-Band: feine Goldlinie oben fuer wertigen Abschluss */
+.cta-band{position:relative;}
+.cta-band::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:rgba(212,164,111,.4);}
