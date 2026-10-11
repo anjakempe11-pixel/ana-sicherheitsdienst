@@ -241,3 +241,7 @@ footer { padding: 72px 0 22px; background: #1e1e1c; color: #ddd5cb; }
 /* Bild-Logo in der Kopfzeile */
 .nav-wrap .brand-logo{width:auto;height:70px;mix-blend-mode:normal;}
 @media(max-width:700px){.nav-wrap .brand-logo{height:54px;}}
+
+/* Marken-Panel mit Loewen-Logo (edel) */
+.brand-panel.has-logo{padding:40px;}
+.brand-panel.has-logo img{width:100%;max-width:330px;height:auto;filter:drop-shadow(0 16px 36px rgba(0,0,0,.55));}
