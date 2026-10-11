@@ -239,5 +239,5 @@ footer { padding: 72px 0 22px; background: #1e1e1c; color: #ddd5cb; }
 .value-cta .text-link{margin-top:12px;display:inline-flex;}
 
 /* Bild-Logo in der Kopfzeile */
-.nav-wrap .brand-logo{width:auto;height:58px;mix-blend-mode:normal;}
-@media(max-width:700px){.nav-wrap .brand-logo{height:46px;}}
+.nav-wrap .brand-logo{width:auto;height:70px;mix-blend-mode:normal;}
+@media(max-width:700px){.nav-wrap .brand-logo{height:54px;}}
