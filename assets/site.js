@@ -1,9 +1,10 @@
 const page = document.body.dataset.page || "start";
 const navItems = [["start","Startseite","index.html"],["leistungen","Leistungen","leistungen.html"],["kontakt","Kontakt","kontakt.html"]];
 const brand = `<span class="brand-word">ANA</span><span class="brand-sub">Sicherheitsdienst</span>`;
+const logo = `<img class="brand-logo" src="assets/ana-security-logo.png" alt="ANA Sicherheitsdienst">`;
 const header = document.querySelector("[data-site-header]");
 if (header) {
-  header.innerHTML = `<a class="skip-link" href="#inhalt">Zum Inhalt</a><div class="topline"><div class="shell topline-inner"><span>Thüringenweit im Einsatz</span><span>Sicherheit · Diskretion · Verlässlichkeit</span></div></div><div class="shell nav-wrap"><a class="brand" href="index.html" aria-label="ANA Sicherheitsdienst – Startseite">${brand}</a><button class="menu-button" type="button" aria-expanded="false" aria-controls="hauptnavigation"><span></span><span></span><span></span><span class="sr-only">Menü öffnen</span></button><nav id="hauptnavigation" aria-label="Hauptnavigation">${navItems.map(([id,label,href]) => `<a ${id === page ? 'aria-current="page"' : ""} href="${href}">${label}</a>`).join("")}<a class="nav-cta" href="kontakt.html">Anfrage stellen</a></nav></div>`;
+  header.innerHTML = `<a class="skip-link" href="#inhalt">Zum Inhalt</a><div class="topline"><div class="shell topline-inner"><span>Thüringenweit im Einsatz</span><span>Sicherheit · Diskretion · Verlässlichkeit</span></div></div><div class="shell nav-wrap"><a class="brand" href="index.html" aria-label="ANA Sicherheitsdienst – Startseite">${logo}</a><button class="menu-button" type="button" aria-expanded="false" aria-controls="hauptnavigation"><span></span><span></span><span></span><span class="sr-only">Menü öffnen</span></button><nav id="hauptnavigation" aria-label="Hauptnavigation">${navItems.map(([id,label,href]) => `<a ${id === page ? 'aria-current="page"' : ""} href="${href}">${label}</a>`).join("")}<a class="nav-cta" href="kontakt.html">Anfrage stellen</a></nav></div>`;
 }
 const footer = document.querySelector("[data-site-footer]");
 if (footer) {
